@@ -1,0 +1,17 @@
+<% provide(:title, @user.name) %>
+<div class="row">
+  <aside id="sidebar">
+    <div id="user-info">
+      <%= gravatar_for @user %>
+      <p><%= @user.name %></p>
+    </div>
+    <p><strong>Posts:</strong> <%= @user.microposts.count %></p>
+  </aside>
+  <div style="width: 100%">
+    <h2>Micropost (<%= @user.microposts.count %>)</h2>
+    <ul class="microposts">
+      <%= render @microposts %>
+    </ul>
+    <%= will_paginate @microposts %>
+  </div>
+</div>

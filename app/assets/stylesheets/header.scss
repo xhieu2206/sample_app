@@ -1,0 +1,42 @@
+header {
+  width: 100%;
+  background-color: black;
+  color: white;
+
+  > div {
+    display: flex;
+    justify-content: space-between;
+
+    > a {
+      color: white;
+      display: block;
+      font-size: 3em;
+      
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    > nav {
+      display: grid;
+      justify-content: center;
+      align-content: center;
+
+      > ul {
+
+        > li {
+          display: inline-block;
+          margin: auto 1em auto 1em;
+
+          > a {
+            color: white;
+
+            &:hover {
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+  } 
+}

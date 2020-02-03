@@ -1,0 +1,15 @@
+<%= form_for search_path, method: :get do |f| %>
+	<p>
+		<%= f.label "Search for" %>
+		<%= text_field_tag :search, params[:search] %>
+		<%= submit_tag "Search", name: nil %>
+	</p>
+<% end %>
+
+<% if @users.present? %>
+	<% @users.each do |user| %>
+		<p><%= user.name %></p>
+	<% end %>
+<% else %>
+	<p>No record found</p>
+<% end %>

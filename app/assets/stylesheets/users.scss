@@ -1,0 +1,49 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+#sidebar {
+  width: 15%;
+
+  #user-info {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    justify-content: start;
+
+    img {
+      display: block;
+      height: 50px;
+      width: auto;
+    }
+
+    p {
+      font-size: 1.2em;
+      padding-left: 0.5em;
+    }
+  }
+}
+
+ul.users-list {
+  list-style: none;
+  margin: 0;
+
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid gray;
+  }
+}
+
+.pagination {
+
+  > a {
+    display: inline-block;
+    margin-right: 10px;
+    color: rgb(180, 123, 16)
+  }
+
+  > em.current {
+    margin-right: 10px;
+    font-style: normal;
+  }
+}

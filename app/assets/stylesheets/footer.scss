@@ -1,0 +1,25 @@
+footer {
+  margin-top: 2em !important;
+  border-top: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+
+  > nav > ul {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-around;
+    list-style-type: none;
+    
+    > li {
+      margin: auto 0.5em auto 0.5em;
+
+      > a {
+        color: black;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

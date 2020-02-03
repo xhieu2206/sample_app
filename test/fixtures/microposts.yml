@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  content: "One micropost"
+  created_at: <%= 10.hours.ago %>
+  user_id: 1
+
+two:
+  content: "Two micropost"
+  created_at: <%= 9.hour.ago %>
+  user_id: 2
+
+most_recent:
+  content: "Most Recent micropost"
+  created_at: <%= Time.zone.now %>
+  user_id: 3
+
+<% 30.times do |n| %>
+micropost_of_example_user_<%= n %>:
+  content: "This is a micropost of example user number n"
+  created_at: <%= 10.minutes.ago %>
+  user: xhieu
+<% end %>

@@ -1,0 +1,83 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  line-height: 1.5em;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+  margin: auto;
+  width: 90%;
+}
+
+.container > .row {
+  padding-top: 20px;
+  display: flex;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.left {
+  float: left
+}
+
+.right {
+  float: right
+}
+
+.align-center {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.sticky {
+  width: 100%;
+  position: fixed;
+}
+
+.btn {
+  color: white;
+  border-radius: 5px !important;
+  padding: 0.5em;
+}
+
+.btn-primary {
+  border: 1px solid rgb(62, 62, 255);
+  background-color: rgb(62, 62, 255);
+}
+
+.jumbotron {
+  background-color: rgb(228, 227, 227);
+  border-radius: 5px;
+  padding: 1em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  line-height: 2.5em;
+}

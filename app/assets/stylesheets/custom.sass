@@ -1,0 +1,94 @@
+/* mixins, variables, etc. */
+
+$gray-medium-light: #eaeaea
+
+@mixin box_sizing
+  -moz-box-sizing:    border-box
+  -webkit-box-sizing: border-box
+  box-sizing: border-box
+
+/* miscellaneous */
+
+.debug_dump
+  @include box_sizing
+  margin: auto
+  margin-top: 2em
+  width: 90%
+  padding: 1em
+  border: 1px solid black
+  background-color: $gray-medium-light
+
+.field_with_errors
+  input
+    border: 1px solid red
+
+.alert
+  width: 100%
+  color: white
+  text-align: center
+  margin-top: 0.3em
+  margin-bottom: 0.3em
+
+.alert-success
+  background-color: blue
+
+.alert-danger
+  background-color: red
+
+#form-container
+  text-align: center
+  width: 100%
+
+  > .form-control-gavartar
+    width: 40%
+    margin: 0.5em auto auto auto
+    text-align: left
+
+  > form
+
+    > .form-control
+      width: 40%
+      margin: 0.5em auto auto auto
+
+      input[type="text"], input[type="password"], input[type="email"]
+        display: block
+        width: 100%
+
+      label
+        text-align: start
+        display: block
+
+    input[type="submit"]
+      margin: 0.5em auto auto auto
+      padding: 0.5em
+      display: block
+      width: 40%
+      color: white
+      background-color: rgb(67, 67, 255)
+      border: none
+      border-radius: 5px
+
+.new-user-question
+  margin: 0.5em auto auto auto
+  padding-top: 0.5em
+  width: 40%
+  height: 50px
+
+.dropdown
+  position: relative
+
+  > .dropdown-menu
+    list-style-type: none
+    display: none
+    position: absolute
+    background-color: white
+    z-index: 1
+    left: -10px
+    right: 0
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2)
+    text-align: end
+    padding: 5px
+
+    > li
+      > a
+      color: black
