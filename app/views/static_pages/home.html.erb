@@ -1,12 +1,35 @@
-<div class="jumbotron align-center">
-  <h1>Welcome to the Sample App</h1>
-  <h2>
-    This is the home page for the
-    <a href="https://www.railstutorial.org/">Ruby on Rails Tutorial</a> sample application.
-  </h2>
-  <% if !logged_in? %>
-    <%= link_to "Sign up now!", signup_path, class: "btn btn-primary" %>
-  <% end %>
-</div>
-
+<% if !logged_in? %>
+  <div class="jumbotron align-center">
+    <h1>Welcome to the Sample App</h1>
+    <h2>
+      This is the home page for the
+      <a href="https://www.railstutorial.org/">Ruby on Rails Tutorial</a> sample application.
+    </h2>
+    <% if !logged_in? %>
+      <%= link_to "Sign up now!", signup_path, class: "btn btn-primary" %>
+    <% end %>
+  </div>
+<% else %>
+  <div class="row">
+    <aside id="sidebar">
+      <div id="user-info">
+        <%= gravatar_for current_user %>
+        <p><%= current_user.name %></p>
+      </div>
+      <p><strong>Posts:</strong> <%= current_user.microposts.count %></p>
+      <br/>
+      <%= form_for(@micropost) do |form| %>
+        <%= render 'shared/error_messages', object: form.object %>
+        <div class="form-control">
+            <%= form.text_area :content %>
+        </div>
+        <%= form.submit "Post", class: ["btn", "btn-primary"] %>
+      <% end %>
+    </aside>
+    <div style="width: 100%">
+      FEED
+    </div>
+  </div>
+<% end %>
+<br/>
 <%= link_to image_tag("rails-logo.png", alt: "Rails Logo"), 'http://rubyonrails.org/' %>

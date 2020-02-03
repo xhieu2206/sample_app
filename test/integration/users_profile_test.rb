@@ -2,8 +2,8 @@ require 'test_helper'
 
 class UsersProfileTest < ActionDispatch::IntegrationTest
   def setup
-    @user = users(:xhieu)
-    # debugger
+    @user = users(:example)
+    debugger
   end
 
   test "should show user detail page with microposts and pagination for micropost list" do
@@ -14,6 +14,7 @@ class UsersProfileTest < ActionDispatch::IntegrationTest
         password: "password"
       }
     }
+    debugger
     # assert is_logged_in?
     assert_redirected_to @user
     follow_redirect!

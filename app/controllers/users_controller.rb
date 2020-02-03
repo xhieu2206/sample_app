@@ -66,15 +66,6 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
 
-    # Confirm a logged in user
-    def logged_in_user
-      if !logged_in?
-        store_location
-        flash[:danger] = "Please login first"
-        redirect_to login_path
-      end
-    end
-
     # Confirm the edit or uodate user is owner of current user
     def correct_user
       @user = User.find(params[:id])

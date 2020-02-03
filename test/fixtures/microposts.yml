@@ -17,7 +17,7 @@ most_recent:
 
 <% 30.times do |n| %>
 micropost_of_example_user_<%= n %>:
-  content: "This is a micropost of example user number n"
+  content: "This is a micropost of example user number <%= n %>"
   created_at: <%= 10.minutes.ago %>
-  user: xhieu
+  user: example
 <% end %>
