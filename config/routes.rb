@@ -11,5 +11,5 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
   resources :users
   resources :microposts, only: [:create, :destroy]
-  get '/search', to: 'users#search'
+  get '/search_micropost', to: 'microposts#search_for_micropost'
 end

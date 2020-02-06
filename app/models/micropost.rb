@@ -7,4 +7,12 @@ class Micropost < ApplicationRecord
             length: { maximum: 140 }
   # default_scope -> { order("created_at DESC") }
   default_scope -> { order(created_at: :desc) }
+
+  searchable do
+    text :content
+    # string :name do
+    #   user.name
+    # end
+    integer :user_id
+  end
 end

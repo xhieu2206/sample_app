@@ -60,3 +60,6 @@ gem 'sprockets-rails', :require => 'sprockets/railtie'
 
 gem 'faker'
 gem 'will_paginate'
+
+gem 'sunspot_rails'
+gem 'sunspot_solr'

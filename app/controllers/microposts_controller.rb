@@ -15,6 +15,15 @@ class MicropostsController < ApplicationController
 
   end
 
+  def search_for_micropost
+    debugger
+    @search = Sunspot.search Micropost do
+      fulltext params[:q]
+      with :user_id, 5
+    end
+    debugger
+  end
+
   private
 
     def micropost_params

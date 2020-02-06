@@ -37,6 +37,7 @@ pickle-email-*.html
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+/tmp/cache/
 
 # TODO Comment out this rule if you are OK with secrets being uploaded to the repo
 config/initializers/secret_token.rb
@@ -99,3 +100,9 @@ API
 Training
 Blog
 About
+
+solr/data
+solr/test/data
+solr/development/data
+solr/default/data
+solr/pids

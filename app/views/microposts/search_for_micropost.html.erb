@@ -1,0 +1,13 @@
+<%= form_for search_micropost_path, method: :get do |f| %>
+	<p>
+		<%= f.label "Search for" %>
+		<%= text_field_tag :q, params[:q] %>
+		<%= submit_tag "Go", name: nil %>
+	</p>
+<% end %>
+
+<% if !@search.results.nil? %>
+  <% @search.results.each do |micropost| %>
+    <p><%= micropost.content %></p>
+  <% end %>
+<% end %>
