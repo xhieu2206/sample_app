@@ -47,6 +47,11 @@ class User < ApplicationRecord
     update_attribute(:remember_digest, nil)
   end
 
+  # Sử dụng tạm thời để  cho trang home page, sẽ thay đổi về sau
+  def feed
+    @microposts = Micropost.where("user_id = ?", self.id)
+  end
+
   private
 
     def downcase_email

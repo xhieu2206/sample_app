@@ -40,16 +40,6 @@ class UsersController < ApplicationController
     end
   end
 
-  # def search
-  #   if params[:search].present?
-  #     search = User.search do
-  #       fulltext params[:search]
-  #     end
-  #     # debugger
-  #     @users = search.results
-  #   end
-  # end
-
   def index
     @users = User.paginate(page: params[:page], per_page: 10)
   end

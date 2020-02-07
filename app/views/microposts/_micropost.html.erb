@@ -1,8 +1,11 @@
 <li class="micropost">
   <%= link_to gravatar_for(micropost.user, size: 30), micropost.user %>
   <div>
-    <p><%= link_to micropost.user.name, micropost.user.name %></p>
+    <p><%= link_to micropost.user.name, user_path(micropost.user) %></p>
     <p><%= micropost.content  %></p>
     <p><strong>Post: </strong><i><%= time_ago_in_words(micropost.created_at) %></i></p>
+    <% if current_user.id == micropost.user_id %>
+      <%= link_to "Delete", micropost_path(micropost), method: :delete, data: { confirm: "Are you sure?"}, class: "link-danger" %>
+    <% end %>
   </div>
 </li>

@@ -73,6 +73,15 @@ a:hover {
   background-color: rgb(62, 62, 255);
 }
 
+.btn-danger {
+  border: 1px solid red;
+  background-color: red;
+}
+
+.link-danger {
+  color: red;
+}
+
 .jumbotron {
   background-color: rgb(228, 227, 227);
   border-radius: 5px;
