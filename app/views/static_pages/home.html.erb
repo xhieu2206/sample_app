@@ -27,7 +27,13 @@
       <% end %>
     </aside>
     <div style="width: 100%">
-      FEED
+      <h2>Microposts Feed (<%= @feed_microposts.count %>)</h2>
+      <ul class="microposts">
+        <%= render @feed_microposts %>
+      </ul>
+      <% if !@feed_microposts.blank? %>
+        <%= will_paginate @feed_microposts %>
+      <% end %>
     </div>
   </div>
 <% end %>
