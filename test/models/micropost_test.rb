@@ -6,9 +6,9 @@ class MicropostTest < ActiveSupport::TestCase
   # end
 
   def setup
-    @user = users(:example)
+    @user_example = users(:example)
     @test_user = User.new(name: "Test User", email: "testuser@gmail.com", password: "password", password_confirmation: "password")
-    @micropost = @user.microposts.build(content: "Lorem ipsum")
+    @micropost = @user_example.microposts.build(content: "Lorem ipsum")
   end
 
   test "micropost should be correct" do
@@ -40,5 +40,20 @@ class MicropostTest < ActiveSupport::TestCase
     assert_difference 'Micropost.count', -1 do
       @test_user.destroy
     end
+  end
+
+  test "should redirect if delete a micropost belong to another user" do
+    post login_path, params: {
+      session: {
+        email: @user_example.email,
+        password: 'password',
+        remember_me: '1'
+      }
+    }
+    delete_micropost = microposts(:micropost_of_xhieu)
+    assert_no_difference 'Micropost.count' do
+      delete micropost_path(delete_micropost)
+    end
+    assert_redirected_to(root_url)
   end
 end
