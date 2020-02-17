@@ -3,12 +3,12 @@ require "spec_helper"
 
 RSpec.describe StaticPagesController, type: :controller do
 
-  describe "GET root" do
-    it "responds successfully when go to root url" do
-      get :home
-      expect(response.status).to eq(200)
-    end
-  end
+  # describe "GET root" do
+  #   it "responds successfully when go to root url" do
+  #     get :home
+  #     expect(response.status).to eq(200)
+  #   end
+  # end
 
   describe "GET help" do
     # Example

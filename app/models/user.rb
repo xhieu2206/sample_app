@@ -21,10 +21,6 @@ class User < ApplicationRecord
     BCrypt::Password.create(string, cost: cost)
   end
 
-  # searchable do
-  #   text :name
-  # end
-
   # Trả về 1 random token
   def User.new_token
     SecureRandom.urlsafe_base64
