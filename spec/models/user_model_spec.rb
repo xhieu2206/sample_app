@@ -39,5 +39,41 @@ RSpec.describe User, :type => :model do
     expect(@user.valid?).to eq false
   end
 
-  it "should accept "
+  it "should accept valid emails" do
+    valid_emails = %w[user@example.com USER@foo.COM A_US-ER@foo.bar.org
+      first.last@foo.jp alice+bob@baz.cn]
+    valid_emails.each do |email|
+      @user.email = email
+      expect(@user.valid?).to eq true
+    end
+  end
+
+  it "should not accept invalid email" do
+    invalid_emails = %w[user@.com USER@foo. @foo.bar.org
+      f@foo.jp alice+bob@baz]
+  end
+
+  it "email address should be unique" do
+    dup_user = @user.dup
+    dup_user.email = @user.email.upcase
+    @user.save
+    expect(dup_user.valid?).to eq false
+  end
+
+  it "email shhould be saved as lowercase" do
+    newMixEmail = "ExamPleEmailTest@gmail.com"
+    @user.email = newMixEmail
+    @user.save
+    expect(newMixEmail.downcase).to eq User.find_by(email: newMixEmail.downcase).email
+  end
+
+  it "password should be present (nonblank)" do
+    @user.password = @user.password_confirmation = " " * 6
+    expect(@user.valid?).to eq false
+  end
+
+  it "password should have minimum length" do
+    @user.password = @user.password_confirmation = "a" * 5
+    expect(@user.valid?).to eq false
+  end
 end
