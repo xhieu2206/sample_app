@@ -76,4 +76,14 @@ RSpec.describe User, :type => :model do
     @user.password = @user.password_confirmation = "a" * 5
     expect(@user.valid?).to eq false
   end
+
+  it "mock user should be valid" do
+    user = double("user")
+    another_user = double("user", email: "anotherUser@gmail.com")
+
+    expect(another_user.email).to eq "anotherUser@gmail.com"
+
+    user1 = instance_double(User, name: "Xuân Hiếu")
+    # user2 = instance_double(User, name: "Xuân Hiếu", age: 25) # Raise exception vì không có field age
+  end
 end
